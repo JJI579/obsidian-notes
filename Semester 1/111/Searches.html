@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Searches</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#algorithmic-searches"
+id="toc-algorithmic-searches">Algorithmic Searches</a>
+<ul>
+<li><a href="#breadth-first-search"
+id="toc-breadth-first-search">Breadth First Search </a></li>
+<li><a href="#dls---depth-limited-search"
+id="toc-dls---depth-limited-search">DLS - Depth Limited Search</a></li>
+<li><a href="#iterative-deepening-subset-of-dls"
+id="toc-iterative-deepening-subset-of-dls">Iterative deepening (Subset
+of DLS)</a></li>
+</ul></li>
+<li><a href="#heuristic" id="toc-heuristic">Heuristic</a>
+<ul>
+<li><a href="#bi-directional-search"
+id="toc-bi-directional-search">Bi-directional Search</a></li>
+<li><a href="#uniform-cost-search-ucs"
+id="toc-uniform-cost-search-ucs">Uniform Cost Search (UCS?)</a></li>
+<li><a href="#greedy-search" id="toc-greedy-search">Greedy
+Search</a></li>
+<li><a href="#a-star" id="toc-a-star">A-Star</a></li>
+<li><a href="#heuristics-summarised"
+id="toc-heuristics-summarised">Heuristics Summarised</a></li>
+</ul></li>
+</ul>
+</nav>
+<p><strong><em>Terms Referenced</em></strong> [[Key Terms#|b]] [[Key
+Terms#|d]] [[Key Terms#|m]]</p>
+<h1 id="algorithmic-searches">Algorithmic Searches</h1>
+<h2 id="breadth-first-search">Breadth First Search </h2>
+<p>Process 1. Inits Frontier {<span
+class="math inline">\(s_{0}\)</span>} 2. Then iterates through layer by
+layer 3. Gets successors, adds to frontier {<span
+class="math inline">\(s_{0}, s_{1}, s_{2}, s_{3}\)</span>} 4. Then
+iterates through each item added to the frontier getting their
+successors 5. Continues till goal state found</p>
+<p>Time Complexity: <span class="math inline">\(1 + b + b^2 + b^3 ….
+b^d\)</span> Space Complexity: <span class="math inline">\(b^d\)</span>
+is therefore the maximum memory allocation during search</p>
+<p>Advantages - It will ALWAYS find a solution due to its searching
+algorithm - It is most optimal in terms of finding the shortest
+solution</p>
+<p>Disadvantages - Slow for deep graphs - Doesn’t handle weighted
+(cost-based) graphs efficiently -&gt; rather utilise Heuristic
+Algorithms ## Depth First Search</p>
+<p>Time Complexity: <span class="math inline">\(1 + b + b^2 + b^3 ….
+b^m\)</span> Space Complexity: <span
+class="math inline">\(b*d\)</span></p>
+<p>Process 1. Inits Frontier {<span
+class="math inline">\(s_{0}\)</span>} 2. Then iterates through layer by
+layer 3. Gets successors, adds to frontier {<span
+class="math inline">\(s_{0}, s_{1}, s_{2}, s_{3}\)</span>} 4. Through
+any of these initial successors and goes entirely down its depth prior
+to proceeding to another initial successor. eg: {<span
+class="math inline">\(s_{0},s_{1},s_{2},s_{3},s_{1}s_{4},s_{1}s_{4}s_{5}\)</span>}
+6. Continues till goal state found</p>
+<p>Advantages - Memory required low due to its nature of search -
+efficient for deep solutions due to ^^ - Optimally used when developing
+in functional languages (due to recursive nature)</p>
+<p>Disadvantages - Incomplete: it does not always find a solution first
+- Inefficient in wide graphs (horizontally) - Unoptimised, once it finds
+a solution it exists and DFS does not guarantee optimisation.</p>
+<p>With each of these algorithmic search techniques, we conclude that
+BFS is complete yet expensive with DFS being cheap but incomplete</p>
+<p>Since DFS is incomplete, the next search technique was implemented to
+avoid that problem</p>
+<h2 id="dls---depth-limited-search">DLS - Depth Limited Search</h2>
+<p>L is the depth limit Time Complexity: <span class="math inline">\(1 +
+b + b^2 + b^3 …. b^L\)</span> Space Complexity: <span
+class="math inline">\(b*L\)</span></p>
+<p>Set a depth limit Can be optimally used if the depth of the goal
+state is known and therefore anything &gt; than that can be redacted as
+it is extra <strong>unnecessary</strong> information</p>
+<p>Properties - Incomplete - if the depth limit is set too short (the
+goal state has a higher depth) then it will not be guaranteed a solution
+- Not optimal - solution found is still not guaranteed to be a shortest
+path</p>
+<h2 id="iterative-deepening-subset-of-dls">Iterative deepening (Subset
+of DLS)</h2>
+<p>Start with depth n = 0; if solution found, return Else increment +1
+till solution is found Use case: maximal depth of goal state is not
+found.</p>
+<p>Time Complexity: <span class="math inline">\(1 + (1 + b) + (1 + b +
+b2) + · · · + (1 + b + b2 + · · · + b*d )\)</span> where <span
+class="math inline">\(x\)</span> is the limit of the iterative</p>
+<p>Space Complexity: <span class="math inline">\(b^d\)</span></p>
+<p>Advantages - Complete - as the maximum depth continuously increases
+without the constraint of setting too little of a depth, now it can
+always find a solution - Optimal - will always find the shortest
+solution</p>
+<h1 id="heuristic">Heuristic</h1>
+<h2 id="bi-directional-search">Bi-directional Search</h2>
+<p>Search from the goal state backwards, as well as the initial state
+forwards Requirements - Need to determine the predecessor states to
+goal</p>
+<p>Advantages - Often <strong>much</strong> more efficient - perform two
+searches at once up to depth d/2 - Can combine alternative search
+strategies in different directions to optimise the search.</p>
+<p>Bi-directional will examine <span
+class="math inline">\(2*(1+b+b^{2}+b^3)\)</span></p>
+<p><em>that’s it</em></p>
+<p>Disadvantages - must be able to generate predecessors of states - has
+to be an efficient way to check whether a new state appears - if [[Key
+Terms#D|d]] is large - then it is impractical - two bi-directional BFS
+memory requirement = <span class="math inline">\(b^\left( \frac{d}{2}
+\right)\)</span></p>
+<h2 id="uniform-cost-search-ucs">Uniform Cost Search (UCS?)</h2>
+<p>Expand the cheapest path first Performance: same as breadth-first
+expand the minimum cost path rather than shortest Search performs BFS if
+the cost of every step is the same</p>
+<p>How it performs - Mapping each path to a cost function to identify
+its performance cost in relevance to other paths - Then it performs
+UCS</p>
+<p>Advantages - Complete and Optimal: Guaranteed to find the solution
+and the most <strong>optimal</strong> assuming past costs grow
+monotonically - Time and Space Complexity: same as BFS</p>
+<p><strong><em>monotonically</em></strong> - the cost of a path
+increases if we move along it. In other words, we assume that adding
+another step to a path makes it more costly, i.e. g (s0…sk ) &lt; g
+(s0…sk s).</p>
+<p><strong><em>polynomial</em></strong> - Mathematical expressional that
+will always return a finite number of terms</p>
+<p><strong><em>Heuristic</em></strong> - Algorithms labelled have some
+sort of utility or cost based function to determine a value that can be
+compared for efficiency with <em>some</em> knowledge of the goal
+state</p>
+<h2 id="greedy-search">Greedy Search</h2>
+<p>Considers only the heuristics of the current frontier, when at {<span
+class="math inline">\(s_{0}\)</span>} it will get all its successors
+then work off the</p>
+<ul>
+<li>Incomplete - As it can not backtrack so therefore the heuristics and
+its current frontier is the only available set after checking the
+successors of {<span class="math inline">\(s_{0}\)</span>}</li>
+<li>Not Optimal - if the heuristics are the same as the path length then
+it would be however this is impractical and other searches can be
+optimised such as [[#A-Star]] can be used.</li>
+</ul>
+<h2 id="a-star">A-Star</h2>
+<p>Aim: combine uniform cost (cost of the path) and greedy search (the
+heuristic value of reaching a node)</p>
+<p>heuristic <span class="math inline">\(f\)</span> = <span
+class="math inline">\(f(s_{0}\dots sk) = g(s_{0}\dots sk) +
+h(sk)\)</span></p>
+<p>Select and remove from frontier of path where above is minimal</p>
+<h2 id="heuristics-summarised">Heuristics Summarised</h2>
+<p><strong>Goal State Heuristic</strong>: 0 If it is the goal state, it
+is always 0 #### Greedy - Only considers heuristic value of the node -
+it is <strong>NOT</strong> cumulative values, just the most prominent
+node in the frontier at that time - When the frontier is {<span
+class="math inline">\(s_{0}\)</span>} - it will get all its children
+then work based on lowest heuristic</p>
+<h4 id="a">A*</h4>
+<ul>
+<li>Considers path lengths and heuristic</li>
+<li>However it <strong>CUMULATES</strong> path length to get <span
+class="math inline">\(s_{x}\)</span> but <strong>DOESNT</strong>
+cumulate heuristics</li>
+<li>Path Cost Formula: g(<span class="math inline">\(x\)</span>) =
+g(prior node) + edge cost (prior node, <span
+class="math inline">\(x\)</span>)</li>
+</ul>
+<h4 id="uniform-cost-search">Uniform Cost Search</h4>
+<ul>
+<li>Cumulative cost of path lengths</li>
+<li>Optimal on the basis that cost values cannot provide a
+<em>negative</em> value</li>
+</ul>
+</body>
+</html>

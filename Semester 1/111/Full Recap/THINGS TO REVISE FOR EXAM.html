@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>THINGS TO REVISE FOR EXAM</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#bfs" id="toc-bfs">BFS</a></li>
+<li><a href="#dfs" id="toc-dfs">DFS</a></li>
+<li><a href="#depth-limited"
+id="toc-depth-limited">Depth-Limited</a></li>
+<li><a href="#greedy" id="toc-greedy">Greedy</a></li>
+<li><a href="#a" id="toc-a">A*</a></li>
+<li><a href="#uniform-cost-search"
+id="toc-uniform-cost-search">Uniform-Cost Search</a></li>
+<li><a href="#agents---topic" id="toc-agents---topic">Agents -
+Topic</a></li>
+<li><a href="#history-in-ai" id="toc-history-in-ai">History in AI</a>
+<ul>
+<li><a href="#simple-reflex-agent" id="toc-simple-reflex-agent">Simple
+Reflex Agent</a>
+<ul>
+<li><a href="#peas-descriptor" id="toc-peas-descriptor">PEAS
+Descriptor</a></li>
+</ul></li>
+<li><a href="#model-based-agents"
+id="toc-model-based-agents">Model-based Agents</a></li>
+<li><a href="#goal-based-agents" id="toc-goal-based-agents">Goal-based
+Agents</a></li>
+<li><a href="#utility-based-agents"
+id="toc-utility-based-agents">Utility-based Agents</a></li>
+</ul></li>
+</ul>
+</nav>
+<ul>
+<li>BFS</li>
+<li>DFS Depth Limited Search</li>
+</ul>
+<p>Space / Time complexity of all</p>
+<p>and what order each search takes from the frontier</p>
+<p>[[4. Tree Search . init searches 2 1.pdf]] [[5 Game Playing.pdf]]
+[[]]</p>
+<p><strong><em>Specifically revise greedy search</em></strong></p>
+<h1 id="bfs">BFS</h1>
+<h1 id="dfs">DFS</h1>
+<h1 id="depth-limited">Depth-Limited</h1>
+<h1 id="greedy">Greedy</h1>
+<h1 id="a">A*</h1>
+<h1 id="uniform-cost-search">Uniform-Cost Search</h1>
+<h1 id="agents---topic">Agents - Topic</h1>
+<p>Narrow AI (Weak) - able to solve a small number of specific
+intellectual problems, no conciousness</p>
+<p>AGI - Artificial General Intelligence, can accomplish any
+intellectual task that humans can perform</p>
+<p>Most “AI” are technically Narrow AI</p>
+<hr />
+<h1 id="history-in-ai">History in AI</h1>
+<p>Minsky and Edmonds 1951 - Built first neural network Turing 1950 -
+First chess playing programmes Dartmouth Conference 1956 - Coined the
+name, artificial Intelligence</p>
+<p>Problems throughout the years (1970s) - Combinatorial Explosion -
+Lack of general technology to sustain storage / data levels required</p>
+<p>Lighthill Report 1973 - Came to conclusion that combinatorial
+explosion cannot be addressed and the UK government ended support for AI
+research</p>
+<p>IBM Deep Blue (chess engine) beat Garry kasparow 1997 - done because
+of technological advancements in storage etc</p>
+<p>IBM Watson wins Jeopardy (2011) AlphaGo wins against 9-dan
+professional (2016) Libratus (CMU) wins in Poker (2017) AlphaFold:
+Predict 3D models of protein structures (2020)</p>
+<h2 id="simple-reflex-agent">Simple Reflex Agent</h2>
+<p>Actuator Sensor Environment</p>
+<p>perceives something through sensor, detects what it is, compares in
+its system what it is, and returns its response through actuator</p>
+<p><strong><em>Condition-action rules</em></strong> No history</p>
+<h3 id="peas-descriptor">PEAS Descriptor</h3>
+<p><strong>P</strong>erformance Measure - Criteria to measure the
+success of a behaviour <strong>E</strong>nvironment
+<strong>A</strong>ctuator <strong>S</strong>ensors</p>
+<h4 id="environments">Environments</h4>
+<p><strong>Fully observable vs partially observable</strong> - partial =
+<strong>more</strong> memory <strong>Deterministic vs
+stochastic</strong> = Deterministic = one step can be predicted what
+happens next <strong>Episodic vs sequential</strong> = Sequential = next
+step can affect all future decisions <strong>Static vs dynamic</strong>
+= Static = Unchanged while agent is deciding its response
+<strong>Discrete vs continuous</strong> = Discrete means it has a finite
+number of states</p>
+<h2 id="model-based-agents">Model-based Agents</h2>
+<p>Has a history of one prior step Current perception + prior = current
+state</p>
+<h2 id="goal-based-agents">Goal-based Agents</h2>
+<p>Determines its factors of where it is trying to achieve more logic if
+the steps to achieve it is more long-winded Has history and operates
+<strong>similar</strong> to model-based agent</p>
+<h2 id="utility-based-agents">Utility-based Agents</h2>
+<p>Has a utility function to determine desirability from its next action
+tries to maximise its actions through the utility function</p>
+<p>Doesn’t prioritise history - focuses on current and future states ##
+Learning Agents</p>
+<p>Improves overtime through its past performances has history uses what
+its already learnt to perform an action evaluates outcomes and compares
+to desired performances</p>
+</body>
+</html>

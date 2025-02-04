@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Tag+</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#idea" id="toc-idea">Idea</a>
+<ul>
+<li><a href="#references" id="toc-references">references</a></li>
+<li><a href="#section-2" id="toc-section-2">3</a></li>
+<li><a href="#motivation" id="toc-motivation">Motivation</a></li>
+</ul></li>
+<li><a href="#user-and-data-analysis"
+id="toc-user-and-data-analysis">User and Data Analysis</a>
+<ul>
+<li><a href="#synchronisation"
+id="toc-synchronisation">Synchronisation</a></li>
+<li><a href="#categories-of-users"
+id="toc-categories-of-users">Categories of users</a>
+<ul>
+<li><a href="#personal-users---gen"
+id="toc-personal-users---gen">Personal Users - gen</a></li>
+<li><a href="#students---min" id="toc-students---min">Students -
+min</a></li>
+<li><a href="#researchers---ore" id="toc-researchers---ore">Researchers
+- ore</a></li>
+</ul></li>
+<li><a href="#competitors" id="toc-competitors">Competitors</a>
+<ul>
+<li><a href="#original-bookmarking-systems---kung-fu"
+id="toc-original-bookmarking-systems---kung-fu">Original Bookmarking
+Systems - kung fu</a></li>
+<li><a href="#tagspaces--" id="toc-tagspaces--">TagSpaces -</a></li>
+<li><a href="#eagle" id="toc-eagle">Eagle</a></li>
+<li><a href="#tagstudio" id="toc-tagstudio">TagStudio</a></li>
+<li><a href="#how-is-this-different" id="toc-how-is-this-different">How
+is this Different?</a></li>
+</ul></li>
+<li><a href="#existing-sources" id="toc-existing-sources">Existing
+Sources</a>
+<ul>
+<li><a href="#bookmark-databases" id="toc-bookmark-databases">Bookmark
+Databases</a></li>
+</ul></li>
+<li><a href="#data-analysis" id="toc-data-analysis">Data
+Analysis</a></li>
+</ul></li>
+</ul>
+</nav>
+<p>#comp107</p>
+<h1 id="idea">Idea</h1>
+<p>an interative and more advanced filing system to be incorporated into
+web browsers to better resolve search queries, and identify more
+important filing based on already implemented conventions of HTML, such
+as meta tags ## Context</p>
+<p>Globally there is 8.55 billion searches per day through Google</p>
+<p>With nearly 4 million websites being developed and deployed to the
+internet every day, users of both corporate, or educational standpoints
+have the ability to search and find content of their requirement</p>
+<p>Although web browsers have the core functionality to provide results
+and query web engines correctly, one part that has not been updated upon
+is their bookmarking system. The systematic collection and organisation
+of websites found by the user.</p>
+<p>Many academic roles and data-influenced positions lack the ability to
+organise and effectively find previously bookmarked websites which is
+why through the implementation of our automated systems and
+self-application it should minimise potential time wasted on navigation
+through applying our tag based organiser.</p>
+<p><em>suggest that the expansion in this field is en large and
+therefore we chose to delve further</em> <em>could reference google
+scholar</em></p>
+<p>“Tag+” will be an application and extension universally supporting
+web browsers to better organise and efficiently relate bookmarks to
+associated tags and sub-tags to better coordinate and search through
+long-winded folders of bookmarks. This will also benefit the
+<strong>finish this</strong></p>
+<h3 id="references">references</h3>
+<h4 id="section">1</h4>
+<p>https://www.demandsage.com/google-search-statistics</p>
+<table>
+<thead>
+<tr>
+<th>Time Frame</th>
+<th>Number Of Searches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Every Day</td>
+<td>8.55 billion</td>
+</tr>
+<tr>
+<td>Every Hour</td>
+<td>356.4 million</td>
+</tr>
+<tr>
+<td>Every minute</td>
+<td>5.94 million</td>
+</tr>
+<tr>
+<td>Every second</td>
+<td>99,000</td>
+</tr>
+</tbody>
+</table>
+<h4 id="section-1">2</h4>
+<p>https://explodingtopics.com/blog/google-searches-per-day with 5.44
+billion internet users</p>
+<h3 id="section-2">3</h3>
+<p>https://clockify.me/time-management-statistics 33% of college
+students need help with planning their schedule</p>
+<h2 id="motivation">Motivation</h2>
+<h1 id="user-and-data-analysis">User and Data Analysis</h1>
+<p><em>Have you thought of three or four possible categories of users of
+your system, and for each have you focused on one or two</em><br />
+<em>functionalities that will be carried out by your system and you
+understand well? Have you listed the main knowledge/concepts that can
+support these functionalities, and explained what they represent, in
+plain text? Have you researched how your system can acquire this
+knowledge (e.g. from existing sources?)?</em> ## Main Functionality</p>
+<h3 id="synchronisation">Synchronisation</h3>
+<p>Through utilising already implemented OAUTH systems within web
+browsers, our extension can be implemented and synchronised amongst the
+existing users’ devices, and also have further implementations of a live
+share between other users, which can be used in enterprise or
+educational institutions to support their use cases.</p>
+<h2 id="categories-of-users">Categories of users</h2>
+<p>“Tag+” will prioritise demographics of education and corporate
+standpoints due to their requirements for productivity and efficiency
+when in a work-based environment. Although our focus in demographics
+prioritises work-based environments, a placeholder template for external
+groups outside of our demographic can be used to provide inclusivity to
+a personal subset of users. ### Web Developers - me Considering the
+principles of web design, we can interpret the meta tags and process
+them to recommend tags / sub tags that other user groups would want to
+bookmark the website under.</p>
+<p>Considering the Web Developer’s actions contribute towards the</p>
+<h3 id="personal-users---gen">Personal Users - gen</h3>
+<h3 id="students---min">Students - min</h3>
+<h3 id="researchers---ore">Researchers - ore</h3>
+<h2 id="competitors">Competitors</h2>
+<h3 id="original-bookmarking-systems---kung-fu">Original Bookmarking
+Systems - kung fu</h3>
+<p>these are of already accessible web engines</p>
+<h3 id="tagspaces--">TagSpaces -</h3>
+<p>https://www.tagspaces.org/ <em>though it isnt our exact idea, it has
+the same functionalities. Consider its applications and if we can 1.
+take any ideas that can better optimise our idea, or 2. something that
+we can do better</em></p>
+<p>TagSpaces is a universal file management system that implements our
+suggested tagging feature however, on all types of files. Delving deeper
+into TagSpaces, their tagging system incorporates: - Inline Tagging -
+Customisable Tags - Folder Tagging - Tag Grouping (Parent Tags) - Nested
+Tags</p>
+<p>%% Through reviewing competitors and user understanding, having an
+understanding of the best way to effectively search content through tags
+%%</p>
+<h3 id="eagle">Eagle</h3>
+<p>https://en.eagle.cool/ <em>whoever watches the video for reference
+first can do this one since I’m pretty sure its the one that is
+mentioned in the video so he has all the answers there</em></p>
+<h3 id="tagstudio">TagStudio</h3>
+<h3 id="how-is-this-different">How is this Different?</h3>
+<p>The ways of organising large-scale collections of websites has been
+left in the past when surrounded by the future of technological
+advancement.</p>
+<h2 id="existing-sources">Existing Sources</h2>
+<p>Considering the domain we are developing this in, there is already
+readily-accessible availability of the data that is required, however
+most data will be provided from the users themselves, or the developers
+to better influence their search criterion for users to find their
+websites.</p>
+<h3 id="bookmark-databases">Bookmark Databases</h3>
+<p><em>REREAD - Considering Open Source Bookmark Databases developed by
+the public we can fetch more popular sites and see if any information
+within their title and or content can be used to automatically generate
+a maintag or subtags of the website.</em></p>
+<h2 id="data-analysis">Data Analysis</h2>
+<p>%% what the system requires, where will it be retrieved? %%</p>
+</body>
+</html>

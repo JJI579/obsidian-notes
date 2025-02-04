@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Intelligent Agents</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#basic-cycle-of-agents"
+id="toc-basic-cycle-of-agents">Basic Cycle of Agents</a>
+<ul>
+<li><a href="#condition-action-rules"
+id="toc-condition-action-rules">Condition-Action Rules</a></li>
+</ul></li>
+<li><a href="#agents" id="toc-agents">Agents</a>
+<ul>
+<li><a href="#simple-reflex-agent" id="toc-simple-reflex-agent">Simple
+reflex agent</a>
+<ul>
+<li><a href="#steps" id="toc-steps">Steps</a></li>
+<li><a href="#cons" id="toc-cons">Cons</a></li>
+</ul></li>
+<li><a href="#model-based-reflex-agents"
+id="toc-model-based-reflex-agents">Model-based reflex agents</a></li>
+<li><a href="#goal-based-agents" id="toc-goal-based-agents">Goal-based
+Agents</a></li>
+<li><a href="#utility-based-agents"
+id="toc-utility-based-agents">Utility based agents</a>
+<ul>
+<li><a href="#utility-function" id="toc-utility-function">Utility
+Function</a></li>
+</ul></li>
+<li><a href="#learning-agents" id="toc-learning-agents">Learning
+Agents</a></li>
+</ul></li>
+</ul>
+</nav>
+<p>Intelligent agents: classifications</p>
+<pre><code>Simple reflex agent
+Model-based agent
+Goal-based agent
+Utility-based agent
+Learning agents</code></pre>
+<p>Intelligent agents: classifications</p>
+<p>Simple reflex agent Model-based agent Goal-based agent Utility-based
+agent Learning agents</p>
+<h1 id="basic-cycle-of-agents">Basic Cycle of Agents</h1>
+<p><strong>PEAS</strong> Performance Environment Actuators Sensors</p>
+<pre><code>         Percepts               Actuators
+Environment -&gt; Sensors -&gt; Decision -&gt; Action</code></pre>
+<h2 id="condition-action-rules">Condition-Action Rules</h2>
+<p>This is a part of the model’s decision making, they have
+condition-action rules to determine (dependent on their model’s
+strategy) to decide consequences of the action whilst considering the
+percepts receives and therefore determine an outcome.</p>
+<p><em>below is the simple reflex agent with their condition-action
+rules</em> ![[Pasted image 20241024172343.png]]</p>
+<h1 id="agents">Agents</h1>
+<p>#agents</p>
+<h2 id="simple-reflex-agent">Simple reflex agent</h2>
+<h3 id="steps">Steps</h3>
+<p>Identifies what the environment is like Initiates a condition action
+rule performs an action based on this.</p>
+<h3 id="cons">Cons</h3>
+<p>However it does not have history based on its prior movements</p>
+<h2 id="model-based-reflex-agents">Model-based reflex agents</h2>
+<p>Maintains an internal memory that depends on its environment’s
+percepts</p>
+<p>When initialising its condition-action rules -&gt; gets current
+percept and identifies its past percepts and based on its
+understanding</p>
+<p>The final decision is not more complicated however its prior actions
+are greater considered through analysing its prior history.</p>
+<p>Limitations Though it considers the past, it does not consider the
+potential future</p>
+<h2 id="goal-based-agents">Goal-based Agents</h2>
+<p>These agents are based on the instructor providing actions they
+should take to achieve their “goal” which is the desired state of the
+AI. Knowledge of the state does not mean the AI understands what to
+do.</p>
+<ul>
+<li>Considers prior history</li>
+<li>Considers consequences of its next acvtion, and if not appropriate
+itll consider alternative actions that optimises its path towards the
+goal state</li>
+</ul>
+<p>Has same characteristics that the model-based reflex agents</p>
+<h2 id="utility-based-agents">Utility based agents</h2>
+<p>Make use of a utility function to compare the desirability of
+different states that results from actions</p>
+<h3 id="utility-function">Utility Function</h3>
+<p>The agent will use this function to give a degree of usefulness of
+the action to be performed that will result in the next state for the
+agent The Agent will try to get the best result from the utility
+function</p>
+<p>This piggybacks from the goal-based however now considers its
+happiness from its action.</p>
+<h2 id="learning-agents">Learning Agents</h2>
+<p>Learning agents will piggyback from its own actions and consequences
+and use its prior knowledge to decide another step (or a more optimised
+step) that it can take to achieve its goal.</p>
+<p>Can generate new problems that can be used to learn better action
+selection procedures ## Problem Formulation Consider a goal-based agent
+It can perform a set of actions to achieve its goal The difficulty of
+implementing this agent is deciding the order of actions it should take
+To implement and compute an efficient agent, it has to compute the most
+optimal set of actions that leads to the goal with the most optimal
+conditions.</p>
+<p>The process of Describing the goal The relevant states Possible
+actions Optimality criterion This is called the problem formulation</p>
+</body>
+</html>
